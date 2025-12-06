@@ -28,10 +28,7 @@ export default ((opts?: Partial<BacklinksOptions>) => {
     if (options.hideWhenEmpty && backlinkFiles.length == 0) {
       return null
     }
-    return (
-      <div class={classNames(displayClass, "backlinks")}>
-      </div>
-    )
+    return null
   }
 
   Backlinks.css = style
