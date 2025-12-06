@@ -125,12 +125,7 @@ function renderTranscludes(
             node.children = [
               normalizeHastElement(blockNode, slug, transcludeTarget),
               {
-                type: "element",
-                tagName: "a",
-                properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
-                children: [
-                  { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
-                ],
+                
               },
             ]
           }
