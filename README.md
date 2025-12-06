@@ -1,18 +1,48 @@
-# Quartz v4
+(1) Создание проекта
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Создаем пустую папку и выполняем в терминале данную команду
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+```bash
+git clone https://github.com/jackyzha0/quartz.git
+```
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+Переименуем папку в какую мы хотим
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+```bash
+cd наше-переименованное-название
+npm i (npm install)
+npx quartz create (выбираем далее что нас интересует)
+```
 
-## Sponsors
+При ошибке "выполнение сценариев отключено в этой системе":
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+При ошибке "Недостаточно прав доступа для выполнения этой операции":
+
+```bash
+Set-ExecutionPolicy RemoteSigned - ASet-ExecutionPolicy RemoteSigned
+```
+
+(2) Привязка к github
+
+```bash
+git remote -v
+git remote rm origin
+git remote add origin https://... (ссылка по https)
+npx quartz sync --no-pull
+```
+
+(3) Выпуск в продакшен
+
+Заходим в GitHub Desktop. Делаем clone нашего репозитория который мы создали на шаге (2). Затем переходим в папку с клонированным репозиторием создаем по пути .github/workflows папку deploy.yml. Затем переходим по [ссылке](https://quartz.jzhao.xyz/hosting) и копируем код из блока GitHub Pages.
+
+После сохранения изменений в нашем репозитории появился файл deploy.yml заходим в настройки проекта и нажимаем Pages->GitHub Actions
+
+Опционально:
+Каждый раз изменяя контент заходим в GitHub Desktop и делаем комиты и push в ветку origin
+
+
+
