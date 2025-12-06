@@ -44,7 +44,9 @@ export default ((userOpts?: Partial<Options>) => {
             const tags = page.frontmatter?.tags ?? []
 
             return (
-              
+              <li class="recent-li">
+                
+              </li>
             )
           })}
         </ul>
