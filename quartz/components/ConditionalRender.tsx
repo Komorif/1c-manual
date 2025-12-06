@@ -7,9 +7,7 @@ type ConditionalRenderConfig = {
 
 export default ((config: ConditionalRenderConfig) => {
   const ConditionalRender: QuartzComponent = (props: QuartzComponentProps) => {
-    if (config.condition(props)) {
-      return <config.component {...props} />
-    }
+
 
     return null
   }
